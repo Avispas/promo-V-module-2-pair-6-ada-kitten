@@ -4,7 +4,7 @@ const box = document.querySelector ('.js-list');
 const kittenOneImg = 'https://dev.adalab.es/gato-siames.webp';
 const kittenOneName = `Anastacio`;
 const kittenOneDesc = `Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy osiblemente.` ;
-const kittenOneRace = ``;
+const kittenOneRace = `Siames`;
 
 const kittenOneNameUp = kittenOneName.toUpperCase();
 
@@ -59,29 +59,47 @@ box.innerHTML = kittenOne + kittenTwo + kittenThree;
 //Búsqueda por descripcióm
 
 
-const input_search_desc = document.querySelector('.js_in_search_desc');
-const descrSearchText = input_search_desc.value;
+// const input_search_desc = document.querySelector('.js_in_search_desc');
+// console.log(input_search_desc);
+// const descrSearchText = input_search_desc.value;
+// console.log(descrSearchText);
 
 if (kittenOneDesc.includes (descrSearchText)){
-    box.innerHTML = kittenOne
-    console.log('box');  
+    box.innerHTML = kittenOne;
 }
 
 if (kittenTwoDesc.includes (descrSearchText)){
-    box.innerHTML = kittenTwo
-    console.log('box');  
+    box.innerHTML = kittenTwo;
 }
 
 if (kittenThreeDesc.includes (descrSearchText)){
-    box.innerHTML = kittenThree
-    console.log('box');  
+    box.innerHTML = kittenThree;
 }
 
 
-let html = '' ;
-if (kittenOneRace === "") {
-    html = `Uy que despiste, no sabemos su raza`;
-  } else {
-    html = kittenOneRace;
-  }
+// let html = '' ;
+// if (kittenOneRace === "") {
+//     html = `Uy que despiste, no sabemos su raza`;
+//   } else {
+//     html = kittenOneRace;
+//   }
 
+//MOSTRAR OCULTAR FORMULARIO
+const newForm = document.querySelector('.new-form')
+function showNewCatForm() {
+    newForm.classList.remove('collapsed');
+  }
+function hideNewCatForm() {
+    newForm.classList.add('collapsed');
+  }
+function handleClickNewCatForm() {
+    if (newForm.classList.contains('collapsed')) {
+       showNewCatForm ();
+    } else {
+      hideNewCatForm ();
+    }
+  }
+const linkNewFormElement = document.querySelector('.fa-plus-circle');
+
+
+  linkNewFormElement.addEventListener('click', handleClickNewCatForm);
