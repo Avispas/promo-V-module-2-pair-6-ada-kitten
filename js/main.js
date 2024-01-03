@@ -76,6 +76,13 @@ if (kittenThreeDesc.includes (descrSearchText)){
     box.innerHTML = kittenThree;
 }
 
+// Bonues 2.3 condicionales
+//let html = '' ;
+//if (kittenOneRace === "") {
+    //html = `Uy que despiste, no sabemos su raza`;
+  //} else {
+    //html = kittenOneRace;
+  //}
 
 // let html = '' ;
 // if (kittenOneRace === "") {
@@ -103,3 +110,35 @@ const linkNewFormElement = document.querySelector('.fa-plus-circle');
 
 
   linkNewFormElement.addEventListener('click', handleClickNewCatForm);
+// quita la clase collapsed // preguntar porque la clase en HTML era solo new-form y en js estaba .js-new-form
+  const formSection = document.querySelector('.js-new-form');
+  const plusButton = document.querySelector ('.fa-plus-circle');
+  plusButton.addEventListener ('click', () => {
+    formSection.classList.remove('collapsed');
+  });
+   
+    
+ 
+     
+  const btnAdd = document.querySelector ('.js-btn-add');
+  const inputDesc = document.querySelector('.js-input-desc');
+  const inputPhoto = document.querySelector('.js-input-photo');
+  const inputName = document.querySelector('.js-input-name');
+  const labelMessageError = document.querySelector('.js-label-error');
+    const valueDesc = inputDesc.value;
+    const valuePhoto = inputPhoto.value;
+    const valueName = inputName.value;
+
+    formSection.addEventListener ('click', () =>{
+        
+
+    });
+
+    btnAdd.addEventListener('click', () => {
+        if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+            labelMessageError.innerHTML = `¡Uy! parece que has olvidado algo` 
+            } else {
+            
+            }
+    });
+  
