@@ -1,9 +1,9 @@
 'use strict';
-const box = document.querySelector ('.js-list');
+const box = document.querySelector('.js-list');
 //KITTEN ONE
 const kittenOneImg = 'https://dev.adalab.es/gato-siames.webp';
 const kittenOneName = `Anastacio`;
-const kittenOneDesc = `Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy osiblemente.` ;
+const kittenOneDesc = `Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy osiblemente.`;
 const kittenOneRace = `Siames`;
 
 const kittenOneNameUp = kittenOneName.toUpperCase();
@@ -24,8 +24,7 @@ const kittenThreeRace = `Maine Coon`;
 
 const kittenThreeNameUp = kittenThreeName.toUpperCase();
 
-const kittenOne = 
-`<li class="card">
+const kittenOne = `<li class="card">
  <article> 
  <img class="card_img" src= ${kittenOneImg} /> 
  <h3 class="card_title"> ${kittenOneNameUp} </h3> 
@@ -34,8 +33,7 @@ const kittenOne =
  </article> 
  </li>`;
 
-const kittenTwo = 
-`<li class="card"> 
+const kittenTwo = `<li class="card"> 
 <article> 
 <img class="card_img" src= ${kittenTwoImg} /> 
 <h3 class="card_title"> ${kittenTwoNameUp} </h3> 
@@ -44,8 +42,7 @@ const kittenTwo =
 </article>
 </li> `;
 
-const kittenThree = 
-`<li class="card">
+const kittenThree = `<li class="card">
 <article>
 <img class="card_img" src= ${kittenThreeImg} /> 
 <h3 class="card_title">${kittenThreeNameUp}</h3> 
@@ -58,87 +55,72 @@ box.innerHTML = kittenOne + kittenTwo + kittenThree;
 
 //Búsqueda por descripcióm
 
-
-// const input_search_desc = document.querySelector('.js_in_search_desc');
-// console.log(input_search_desc);
-// const descrSearchText = input_search_desc.value;
-// console.log(descrSearchText);
-
-if (kittenOneDesc.includes (descrSearchText)){
+function searchCat(event) {
+  event.preventDefault();
+  const input_search_desc = document.querySelector('.js_in_search_desc');
+  console.log(input_search_desc);
+  const descrSearchText = input_search_desc.value;
+  console.log(descrSearchText);
+  if (kittenOneDesc.includes(descrSearchText)) {
     box.innerHTML = kittenOne;
-}
-
-if (kittenTwoDesc.includes (descrSearchText)){
+  }
+  else if(kittenTwoDesc.includes(descrSearchText)) {
     box.innerHTML = kittenTwo;
-}
-
-if (kittenThreeDesc.includes (descrSearchText)){
+  }
+  else if (kittenThreeDesc.includes(descrSearchText)) {
     box.innerHTML = kittenThree;
-}
+  }
+};
+const btnSearch = document.querySelector('.js-button-search');
+btnSearch.addEventListener('click', searchCat);
+
 
 // Bonues 2.3 condicionales
 //let html = '' ;
 //if (kittenOneRace === "") {
-    //html = `Uy que despiste, no sabemos su raza`;
-  //} else {
-    //html = kittenOneRace;
-  //}
+//html = `Uy que despiste, no sabemos su raza`;
+//} else {
+//html = kittenOneRace;
+//}
 
-// let html = '' ;
-// if (kittenOneRace === "") {
-//     html = `Uy que despiste, no sabemos su raza`;
-//   } else {
-//     html = kittenOneRace;
-//   }
+
 
 //MOSTRAR OCULTAR FORMULARIO
-const newForm = document.querySelector('.new-form')
+const newForm = document.querySelector('.js-new-form');
 function showNewCatForm() {
-    newForm.classList.remove('collapsed');
-  }
+  newForm.classList.remove('collapsed');
+}
 function hideNewCatForm() {
-    newForm.classList.add('collapsed');
-  }
+  newForm.classList.add('collapsed');
+}
 function handleClickNewCatForm() {
-    if (newForm.classList.contains('collapsed')) {
-       showNewCatForm ();
-    } else {
-      hideNewCatForm ();
-    }
+  if (newForm.classList.contains('collapsed')) {
+    showNewCatForm();
+  } else {
+    hideNewCatForm();
   }
+}
 const linkNewFormElement = document.querySelector('.fa-plus-circle');
 
+linkNewFormElement.addEventListener('click', handleClickNewCatForm);
 
-  linkNewFormElement.addEventListener('click', handleClickNewCatForm);
-// quita la clase collapsed // preguntar porque la clase en HTML era solo new-form y en js estaba .js-new-form
-  const formSection = document.querySelector('.js-new-form');
-  const plusButton = document.querySelector ('.fa-plus-circle');
-  plusButton.addEventListener ('click', () => {
-    formSection.classList.remove('collapsed');
-  });
-   
-    
- 
-     
-  const btnAdd = document.querySelector ('.js-btn-add');
-  const inputDesc = document.querySelector('.js-input-desc');
-  const inputPhoto = document.querySelector('.js-input-photo');
-  const inputName = document.querySelector('.js-input-name');
-  const labelMessageError = document.querySelector('.js-label-error');
-    const valueDesc = inputDesc.value;
-    const valuePhoto = inputPhoto.value;
-    const valueName = inputName.value;
 
-    formSection.addEventListener ('click', () =>{
-        
 
-    });
 
-    btnAdd.addEventListener('click', () => {
-        if (valueDesc === '' || valuePhoto === '' || valueName === '') {
-            labelMessageError.innerHTML = `¡Uy! parece que has olvidado algo` 
-            } else {
-            
-            }
-    });
-  
+const btnAdd = document.querySelector('.js-btn-add');
+const inputDesc = document.querySelector('.js-input-desc');
+const inputPhoto = document.querySelector('.js-input-photo');
+const inputName = document.querySelector('.js-input-name');
+const labelMessageError = document.querySelector('.js-label-error');
+const valueDesc = inputDesc.value;
+const valuePhoto = inputPhoto.value;
+const valueName = inputName.value;
+
+formSection.addEventListener('click', () => {});
+
+btnAdd.addEventListener('click', () => {
+  if (valueDesc === '' || valuePhoto === '' || valueName === '') {
+    labelMessageError.innerHTML = `¡Uy! parece que has olvidado algo`;
+  } else {
+  }
+});
