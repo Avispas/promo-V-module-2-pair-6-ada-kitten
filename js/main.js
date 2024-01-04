@@ -1,53 +1,58 @@
 'use strict';
 const box = document.querySelector('.js-list');
 //KITTEN ONE
-const kittenOneImg = 'https://dev.adalab.es/gato-siames.webp';
-const kittenOneName = `Anastacio`;
-const kittenOneDesc = `Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy osiblemente.`;
-const kittenOneRace = `Siames`;
+const catOne = {
+  kittenOneImg: 'https://dev.adalab.es/gato-siames.webp',
+  kittenOneName: `Anastacio`,
+  kittenOneDesc: `Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy osiblemente.`,
+  kittenOneRace: `Siames`,
+};
 
-const kittenOneNameUp = kittenOneName.toUpperCase();
+
+const kittenOneNameUp = catOne.kittenOneName.toUpperCase();
 
 //KITTEN TWO
-const kittenTwoImg = ` https://dev.adalab.es/sphynx-gato.webp `;
-const kittenTwoName = ` Fiona `;
-const kittenTwoDesc = `Produce fascinación y curiosidad. Exótico, raro, bello, extraño…  hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.`;
-const kittenTwoRace = `Sphynx`;
-
-const kittenTwoNameUp = kittenTwoName.toUpperCase();
+const catTwo = {
+  kittenTwoImg: ` https://dev.adalab.es/sphynx-gato.webp `,
+  kittenTwoName: ` Fiona `,
+  kittenTwoDesc: `Produce fascinación y curiosidad. Exótico, raro, bello, extraño…  hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.`,
+  kittenTwoRace: `Sphynx`,
+};
+const kittenTwoNameUp = catTwo.kittenTwoName.toUpperCase();
 
 //KITTEN THREE
-const kittenThreeImg = ` https://dev.adalab.es/maine-coon-cat.webp`;
-const kittenThreeName = `Cielo`;
-const kittenThreeDesc = `Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.`;
-const kittenThreeRace = `Maine Coon`;
-
-const kittenThreeNameUp = kittenThreeName.toUpperCase();
+const catThree = {
+  kittenThreeImg: ` https://dev.adalab.es/maine-coon-cat.webp`,
+  kittenThreeName: `Cielo`,
+  kittenThreeDesc: `Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.`,
+  kittenThreeRace: `Maine Coon`,
+};
+const kittenThreeNameUp = catThree.kittenThreeName.toUpperCase();
 
 const kittenOne = `<li class="card">
  <article> 
- <img class="card_img" src= ${kittenOneImg} /> 
+ <img class="card_img" src= ${catOne.kittenOneImg} /> 
  <h3 class="card_title"> ${kittenOneNameUp} </h3> 
- <h4 class="card_race"> ${kittenOneRace}</h4> 
- <p class="card_description"> ${kittenOneDesc} </p> 
+ <h4 class="card_race"> ${catOne.kittenOneRace}</h4> 
+ <p class="card_description"> ${catOne.kittenOneDesc} </p> 
  </article> 
  </li>`;
 
 const kittenTwo = `<li class="card"> 
 <article> 
-<img class="card_img" src= ${kittenTwoImg} /> 
+<img class="card_img" src= ${catTwo.kittenTwoImg} /> 
 <h3 class="card_title"> ${kittenTwoNameUp} </h3> 
-<h4 class="card_race"> ${kittenTwoRace}</h4> 
-<p class="card_description"> ${kittenTwoDesc} </p> 
+<h4 class="card_race"> ${catTwo.kittenTwoRace}</h4> 
+<p class="card_description"> ${catTwo.kittenTwoDesc} </p> 
 </article>
 </li> `;
 
 const kittenThree = `<li class="card">
 <article>
-<img class="card_img" src= ${kittenThreeImg} /> 
+<img class="card_img" src= ${catThree.kittenThreeImg} /> 
 <h3 class="card_title">${kittenThreeNameUp}</h3> 
-<h4 class="card_race">${kittenThreeRace}</h4> 
-<p class="card_description">${kittenThreeDesc} </p> 
+<h4 class="card_race">${catThree.kittenThreeRace}</h4> 
+<p class="card_description">${catThree.kittenThreeDesc} </p> 
 </article>
 </li> `;
 
@@ -61,13 +66,13 @@ function searchCat(event) {
   console.log(input_search_desc);
   const descrSearchText = input_search_desc.value;
   console.log(descrSearchText);
-  if (kittenOneDesc.includes(descrSearchText)) {
+  if (catOne.kittenOneDesc.includes(descrSearchText)) {
     box.innerHTML = kittenOne;
   }
-  else if(kittenTwoDesc.includes(descrSearchText)) {
+  else if(catTwo.kittenTwoDesc.includes(descrSearchText)) {
     box.innerHTML = kittenTwo;
   }
-  else if (kittenThreeDesc.includes(descrSearchText)) {
+  else if (catTree.kittenThreeDesc.includes(descrSearchText)) {
     box.innerHTML = kittenThree;
   }
 };
