@@ -1,64 +1,68 @@
 'use strict';
-const box = document.querySelector('.js-list');
-//KITTEN ONE
-const catOne = {
-  kittenOneImg: 'https://dev.adalab.es/gato-siames.webp',
-  kittenOneName: `Anastacio`,
-  kittenOneDesc: `Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy osiblemente.`,
-  kittenOneRace: `Siames`,
-};
+// const box = document.querySelector('.js-list');
+
+// //KITTEN ONE
+// const catOne = {
+//   kittenOneImg: 'https://dev.adalab.es/gato-siames.webp',
+//   kittenOneName: `Anastacio`,
+//   kittenOneDesc: `Porte elegante, su patrón de color tan característico y sus ojos de un azul intenso, pero su historia se remonta a Asía al menos hace 500 años, donde tuvo su origen muy osiblemente.`,
+//   kittenOneRace: `Siames`,
+// };
 
 
-const kittenOneNameUp = catOne.kittenOneName.toUpperCase();
+// const kittenOneNameUp = catOne.kittenOneName.toUpperCase();
 
-//KITTEN TWO
-const catTwo = {
-  kittenTwoImg: ` https://dev.adalab.es/sphynx-gato.webp `,
-  kittenTwoName: ` Fiona `,
-  kittenTwoDesc: `Produce fascinación y curiosidad. Exótico, raro, bello, extraño…  hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.`,
-  kittenTwoRace: `Sphynx`,
-};
-const kittenTwoNameUp = catTwo.kittenTwoName.toUpperCase();
+// //KITTEN TWO
+// const catTwo = {
+//   kittenTwoImg: ` https://dev.adalab.es/sphynx-gato.webp `,
+//   kittenTwoName: ` Fiona `,
+//   kittenTwoDesc: `Produce fascinación y curiosidad. Exótico, raro, bello, extraño…  hasta con pinta de alienígena han llegado a definir a esta raza gatuna que se caracteriza por la «ausencia» de pelo.`,
+//   kittenTwoRace: `Sphynx`,
+// };
+// const kittenTwoNameUp = catTwo.kittenTwoName.toUpperCase();
 
-//KITTEN THREE
-const catThree = {
-  kittenThreeImg: ` https://dev.adalab.es/maine-coon-cat.webp`,
-  kittenThreeName: `Cielo`,
-  kittenThreeDesc: `Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.`,
-  kittenThreeRace: `Maine Coon`,
-};
-const kittenThreeNameUp = catThree.kittenThreeName.toUpperCase();
+// //KITTEN THREE
+// const catThree = {
+//   kittenThreeImg: ` https://dev.adalab.es/maine-coon-cat.webp`,
+//   kittenThreeName: `Cielo`,
+//   kittenThreeDesc: `Tienen la cabeza cuadrada y los ojos simétricos, por lo que su bella mirada se ha convertido en una de sus señas de identidad. Sus ojos son grandes y las orejas resultan largas y en punta.`,
+//   kittenThreeRace: `Maine Coon`,
+// };
+// const kittenThreeNameUp = catThree.kittenThreeName.toUpperCase();
 
-const kittenOne = `<li class="card">
- <article> 
- <img class="card_img" src= ${catOne.kittenOneImg} /> 
- <h3 class="card_title"> ${kittenOneNameUp} </h3> 
- <h4 class="card_race"> ${catOne.kittenOneRace}</h4> 
- <p class="card_description"> ${catOne.kittenOneDesc} </p> 
- </article> 
- </li>`;
+// const kittenOne = 
+// `<li class="card">
+//  <article> 
+//  <img class="card_img" src= ${catOne.kittenOneImg} /> 
+//  <h3 class="card_title"> ${kittenOneNameUp} </h3> 
+//  <h4 class="card_race"> ${catOne.kittenOneRace}</h4> 
+//  <p class="card_description"> ${catOne.kittenOneDesc} </p> 
+//  </article> 
+//  </li>`;
 
-const kittenTwo = `<li class="card"> 
-<article> 
-<img class="card_img" src= ${catTwo.kittenTwoImg} /> 
-<h3 class="card_title"> ${kittenTwoNameUp} </h3> 
-<h4 class="card_race"> ${catTwo.kittenTwoRace}</h4> 
-<p class="card_description"> ${catTwo.kittenTwoDesc} </p> 
-</article>
-</li> `;
+// const kittenTwo = 
+// `<li class="card"> 
+// <article> 
+// <img class="card_img" src= ${catTwo.kittenTwoImg} /> 
+// <h3 class="card_title"> ${kittenTwoNameUp} </h3> 
+// <h4 class="card_race"> ${catTwo.kittenTwoRace}</h4> 
+// <p class="card_description"> ${catTwo.kittenTwoDesc} </p> 
+// </article>
+// </li> `;
 
-const kittenThree = `<li class="card">
-<article>
-<img class="card_img" src= ${catThree.kittenThreeImg} /> 
-<h3 class="card_title">${kittenThreeNameUp}</h3> 
-<h4 class="card_race">${catThree.kittenThreeRace}</h4> 
-<p class="card_description">${catThree.kittenThreeDesc} </p> 
-</article>
-</li> `;
+// const kittenThree = 
+// `<li class="card">
+// <article>
+// <img class="card_img" src= ${catThree.kittenThreeImg} /> 
+// <h3 class="card_title">${kittenThreeNameUp}</h3> 
+// <h4 class="card_race">${catThree.kittenThreeRace}</h4> 
+// <p class="card_description">${catThree.kittenThreeDesc} </p> 
+// </article>
+// </li> `;
 
-box.innerHTML = kittenOne + kittenTwo + kittenThree;
+// box.innerHTML = kittenOne + kittenTwo + kittenThree;
 
-//Búsqueda por descripcióm
+//Búsqueda por descripcióm0
 
 function searchCat(event) {
   event.preventDefault();
