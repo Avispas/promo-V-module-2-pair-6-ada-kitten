@@ -70,15 +70,23 @@ function searchCat(event) {
   console.log(input_search_desc);
   const descrSearchText = input_search_desc.value;
   console.log(descrSearchText);
-  if (catOne.kittenOneDesc.includes(descrSearchText)) {
-    box.innerHTML = kittenOne;
-  }
-  else if(catTwo.kittenTwoDesc.includes(descrSearchText)) {
-    box.innerHTML = kittenTwo;
-  }
-  else if (catTree.kittenThreeDesc.includes(descrSearchText)) {
-    box.innerHTML = kittenThree;
-  }
+  catList.innerHTML = '';
+  for ( const kittenItem of catList){
+    if (kittenItem.kittenDesc.includes(descrSearchText)) {
+      box.innerHTML = renderSuperKitten(kittenItem);
+      const please = 
+      console.log(kittenItem);
+    }
+  };
+  //if (catList[0].kittenDesc.includes(descrSearchText)) {
+    //box.innerHTML = renderSuperKitten(catList[0]);
+  //}
+  //else if(catList[1].kittenDesc.includes(descrSearchText)) {
+    //box.innerHTML = renderSuperKitten(catList[1]);
+  //}
+  //else if (catList[2].kittenDesc.includes(descrSearchText)) {
+    //box.innerHTML = renderSuperKitten(catList[2]);
+  //}
 };
 const btnSearch = document.querySelector('.js-button-search');
 btnSearch.addEventListener('click', searchCat);
@@ -125,7 +133,7 @@ const valueDesc = inputDesc.value;
 const valuePhoto = inputPhoto.value;
 const valueName = inputName.value;
 
-formSection.addEventListener('click', () => {});
+// formSection.addEventListener('click', () => {});
 
 btnAdd.addEventListener('click', () => {
   if (valueDesc === '' || valuePhoto === '' || valueName === '') {
@@ -133,3 +141,5 @@ btnAdd.addEventListener('click', () => {
   } else {
   }
 });
+
+// ¿Y si no hay raza?

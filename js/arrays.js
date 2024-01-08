@@ -38,3 +38,4 @@ function appear() {
     renderSuperKitten(catList[2]);
 }
 appear();
+
